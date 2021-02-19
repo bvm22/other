@@ -1,0 +1,37 @@
+{
+    "code": "vas_promotion_prolong_toggle_value",
+    "variants": [
+        {
+            "rules": [
+                {
+                    "name": "user_id",
+                    "value": [
+                        "6013bf01f6cf2a30e2670528",
+                        "5ba4a7d05f90375db359f92a",
+                        "60111a67ec56b0574279e020",
+                        "6013bf01f6cf2a30e2670528",
+                        "5ba4a7d05f90375db359f92a",
+                        "60111a67ec56b0574279e020",
+                        "6013bf01f6cf2a30e2670528",
+                        "5ba4a7d05f90375db359f92a",
+                        "60111a67ec56b0574279e020",
+                        "6013bf01f6cf2a30e2670528",
+                        "5ba4a7d05f90375db359f92a",
+                        "60111a67ec56b0574279e020",
+                        "6013bf01f6cf2a30e2670528",
+                        "5ba4a7d05f90375db359f92a",
+                        "60111a67ec56b0574279e020",
+                        "6013bf01f6cf2a30e2670528",
+                        "5ba4a7d05f90375db359f92a",
+                        "60111a67ec56b0574279e020",
+                        "5fa3c30458ba6b5f2604ef5c"
+                    ]
+                }
+            ],
+            "value": true
+        }
+    ],
+    "skip_rules": [],
+    "default_value": false,
+    "title": "VAS: позиция переключателя автопродления продвижений: true - вкл., false - выкл."
+}
