@@ -1,0 +1,54 @@
+{
+    "code": "disable_free_limits_by_type_classified",
+    "variants": [
+        {
+            "rules": [
+                {
+                    "name": "user_id",
+                    "value": [
+                        "5a98dd0b65bcf14ce01c1e09",
+                        "58c171c4d9f65a4b23770ece",
+                        "5a40fa736c86cb87152dc3ed",
+                        "5a15647fa09cd5d8f30d3254",
+                        "57f9e4b396ad8401116c33a6",
+                        "5d36c6676c4b44af585e77b7"
+                    ]
+                }
+            ],
+            "value": [
+                "type_classified_dict_chastnik",
+                "type_classified_dict_na_prodaju",
+                "type_classified_dict_magazin"
+            ]
+        },
+        {
+            "rules": [
+                {
+                    "name": "split_groups",
+                    "value": [
+                        {
+                            "split_space": "8m",
+                            "splits": [
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7,
+                                8
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "value": [
+                "type_classified_dict_na_prodaju",
+                "type_classified_dict_magazin"
+            ]
+        }
+    ],
+    "skip_rules": [],
+    "default_value": null,
+    "title": "Выключение бесплатных лимитов по \"Тип объявлений\""
+}
