@@ -25,6 +25,12 @@ paths:
         x-example: "{id}"
         schema:
           type: integer
+      - name: "fake_parameter"
+        in: "query"
+        required: false
+        x-example: "{id}"
+        schema:
+          type: string    
       responses:
         "200":
           description : succesfull
