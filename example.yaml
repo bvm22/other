@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: 'Youla API'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://api.youla.devmail.ru/'
+    description: 'Youla API Stage'
+  -
+    url: 'http://api.youla.local/'
+    description: 'Youla API Local'
+paths:
+  /api/v1/shops/tariffs/limits/packages:
+    get:
+      parameters:
+      - name: "slug_id"
+        in: "query"
+        required: false
+        x-example: "{id}"
+        schema:
+          type: string
+      - name: "geo_type"
+        in: "query"
+        required: false
+        x-example: "{id}"
+        schema:
+          type: integer
+      responses:
+        "200":
+          description : succesfull
+  /api/v1/shops/user/tariffs/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        x-example: "123"
+        schema:
+          type: string
+      responses:
+        "200":
+          description: succefull
