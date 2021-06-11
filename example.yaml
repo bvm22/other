@@ -37,7 +37,7 @@ paths:
   /api/v1/shops/user/tariffs/{id}:
     get:
       parameters:
-      - name: "id"
+      - name: "userTariffId"
         in: "path"
         required: true
         x-example: "123"
