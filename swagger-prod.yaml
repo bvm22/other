@@ -118,7 +118,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chat/{id}:
+  /api/v1/chat/{chatId}:
     get:
       parameters:
       - name: "adv_id"
@@ -166,7 +166,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/internal/stores/cache/user/{id}:
+  /api/v1/internal/stores/cache/user/{userId}:
     get:
       parameters:
       - name: "userId"
@@ -346,7 +346,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/searches/{id}/delete:
+  /api/v1/searches/{searchId}/delete:
     get:
       parameters:
       - name: "adv_id"
@@ -400,7 +400,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/stories/{id}/delete:
+  /api/v1/stories/{storyId}/delete:
     get:
       parameters:
       - name: "adv_id"
@@ -1984,7 +1984,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/category/user/{id}:
+  /api/v1/category/user/{userId}:
     get:
       parameters:
       - name: "app_id"
@@ -1993,19 +1993,19 @@ paths:
         x-example: "{id}"
         schema:
           type: string
-      - name: "levels[]"
+      - name: "levels_1[]"
         in: "query"
         required: false
         x-example: "1"
         schema:
           type: string
-      - name: "levels[]"
+      - name: "levels_2[]"
         in: "query"
         required: false
         x-example: "2"
         schema:
           type: string
-      - name: "levels[]"
+      - name: "levels_3[]"
         in: "query"
         required: false
         x-example: "3"
@@ -2044,7 +2044,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chat/{id}/messages:
+  /api/v1/chat/{chatId}/messages:
     get:
       parameters:
       - name: "adv_id"
@@ -2110,7 +2110,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chat/{id}/message/{id}:
+  /api/v1/chat/{chatId}/message/{messageId}:
     get:
       parameters:
       - name: "adv_id"
@@ -2164,7 +2164,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chat/{id}/open:
+  /api/v1/chat/{chatId}/open:
     get:
       parameters:
       - name: "app_id"
@@ -2218,7 +2218,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chat/{id}/history:
+  /api/v1/chat/{chatId}/history:
     get:
       parameters:
       - name: "app_id"
@@ -2350,7 +2350,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chats/productowner/{id}:
+  /api/v1/chats/productowner/{productId}:
     get:
       parameters:
       - name: "adv_id"
@@ -2416,7 +2416,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chats/products/{id}/info:
+  /api/v1/chats/products/{productId}/info:
     get:
       parameters:
       - name: "app_id"
@@ -2452,7 +2452,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chats/recipient/{id}:
+  /api/v1/chats/recipient/{userId}:
     get:
       parameters:
       - name: "adv_id"
@@ -3592,16 +3592,16 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/field_schemes/references/subway_by_coords/{id}/{id}:
+  /api/v1/field_schemes/references/subway_by_coords/{id_1}/{id_2}:
     get:
       parameters:
-      - name: "adv_id"
+      - name: "adv_id_1"
         in: "query"
         required: false
         x-example: "{id}"
         schema:
           type: string
-      - name: "app_id"
+      - name: "app_id_2"
         in: "query"
         required: false
         x-example: "{id}"
@@ -3637,13 +3637,13 @@ paths:
         x-example: "{id}"
         schema:
           type: string
-      - name: "id"
+      - name: "id_1"
         in: "path"
         required: true
         x-example: "123"
         schema:
           type: string
-      - name: "id"
+      - name: "id_2"
         in: "path"
         required: true
         x-example: "123"
@@ -4162,16 +4162,16 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/geo/city/{id}/{id}:
+  /api/v1/geo/city/{id_1}/{id_2}:
     get:
       parameters:
-      - name: "adv_id"
+      - name: "adv_id_1"
         in: "query"
         required: false
         x-example: "{id}"
         schema:
           type: string
-      - name: "app_id"
+      - name: "app_id_2"
         in: "query"
         required: false
         x-example: "{id}"
@@ -4207,13 +4207,13 @@ paths:
         x-example: "{id}"
         schema:
           type: string
-      - name: "id"
+      - name: "id_1"
         in: "path"
         required: true
         x-example: "123"
         schema:
           type: string
-      - name: "id"
+      - name: "id_2"
         in: "path"
         required: true
         x-example: "123"
@@ -4300,24 +4300,9 @@ paths:
       - name: "myTarget"
         in: "query"
         required: false
-        x-example: "{\"instance_id\":\"2189B9D3-BB94-48F2-8C48-21503708E608\",\"kb_lang\"\
+        x-example: "{id}"
         schema:
           type: string
-          :\"ru,en\",\"os\":\"iOS\",\"skad_ver\":\"2.0\",\"dpi\":\"320\",\"idfa\"\
-          :\"00000000-0000-0000-0000-000000000000\",\"mm_av\":\"85535965184\",\"vendor_id\"\
-          :\"E9FAB81B-69DD-4D95-A343-35E8AEBD02E5\",\"bs\":\"4\",\"manufacture\":\"\
-          Apple\",\"w\":\"2048\",\"osver\":\"14.4.2\",\"connection\":\"wifi\",\"rs\"\
-          :\"1\",\"device\":\"iPad6,11\",\"timezone\":\"GMT+7:00 Asia\\/Krasnoyarsk\"\
-          ,\"bl\":\"74\",\"appver\":\"4.49\",\"advertising_tracking_enabled\":\"0\"\
-          ,\"sig\":\"4ytkdEEtVV5A0XDOehtmAgCMV\\/Y\\/jEQxmTrtxO1d\\/D5mxO\\/W+g+ITwRgZtke9C4RPKZ0zeRfqQmU4M7StXOBJm+reR1NtZViGUszygmGYBg=,4ytkdEEtVV5A0XDOehtmAgCMV\\\
-          /Y\\/jEQxmTrtxO1d\\/D7xj19iLS3y1nuKSdinSYtNYPJeQZDzYjXfOiTv0Ux2Sm+reR1NtZViGUszygmGYBg=,4ytkdEEtVV5A0XDOehtmAgCMV\\\
-          /Y\\/jEQxmTrtxO1d\\/D6szwlccDTGumtbwf2Nonx+4HzgFLM1o5M1qCKGu1OCAW+reR1NtZViGUszygmGYBg=\"\
-          ,\"rooted\":\"0\",\"sig2\":\"vTsNiKAe7sf3EqJG1127VmVb1wnPHRs24Y+URHVo0hLgqlIx0PBGh5cHprdRWTG5ZPdW5mIQ6baqk03jr1DgQG+reR1NtZViGUszygmGYBg=,vTsNiKAe7sf3EqJG1127VmVb1wnPHRs24Y+URHVo0hKuWZqJoZdvXIiPWuJWDpxgn6Q+CAZ6FY6AHY6VJW0VF2+reR1NtZViGUszygmGYBg=,vTsNiKAe7sf3EqJG1127VmVb1wnPHRs24Y+URHVo0hJLnINajoVgmXYzuXPf6CVMy0FlNfNP6E8BBmIn8F2DAG+reR1NtZViGUszygmGYBg=\"\
-          ,\"euname\":\"iPad (Андрей)\",\"mm_tt\":\"127993663488\",\"lang\":\"ru-RU\"\
-          ,\"h\":\"1536\",\"dkm\":\"0\",\"app_lang\":\"ru_RU\",\"density\":\"2\",\"\
-          vendor_id_cached\":\"E9FAB81B-69DD-4D95-A343-35E8AEBD02E5\",\"app\":\"com.allgoritm.Youla\"\
-          ,\"appbuild\":\"28759\",\"att_status\":\"2\",\"connection_type\":\"wifi\"\
-          }"
       - name: "uid"
         in: "query"
         required: false
@@ -4573,7 +4558,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/internal/notice/user/{id}/tariffs:
+  /api/v1/internal/notice/user/{userId}/tariffs:
     get:
       parameters:
       - name: "feature"
@@ -4591,7 +4576,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/internal/stores/{id}/premoderate:
+  /api/v1/internal/stores/{storeId}/premoderate:
     get:
       parameters:
       - name: "field_name"
@@ -5479,7 +5464,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/payments/{id}/transaction_status:
+  /api/v1/payments/{paymentId}/transaction_status:
     get:
       parameters:
       - name: "paymentId"
@@ -6151,7 +6136,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/products/{id}/publish/list:
+  /api/v1/products/{productId}/publish/list:
     get:
       parameters:
       - name: "adv_id"
@@ -6553,7 +6538,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/products/limits/{id}/pay:
+  /api/v1/products/limits/{productLimitId}/pay:
     get:
       parameters:
       - name: "uid"
@@ -6595,7 +6580,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/products/limits/{id}/pay_mobile:
+  /api/v1/products/limits/{productLimitId}/pay_mobile:
     get:
       parameters:
       - name: "phone"
@@ -7447,7 +7432,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/promotions/{id}/transaction_status:
+  /api/v1/promotions/{promotionId}/transaction_status:
     get:
       parameters:
       - name: "promotionId"
@@ -7603,7 +7588,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/rating/user/{id}/product/{id}:
+  /api/v1/rating/user/{userId}/product/{productId}:
     get:
       parameters:
       - name: "adv_id"
@@ -7657,7 +7642,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/ratings/{id}:
+  /api/v1/ratings/{userId}:
     get:
       parameters:
       - name: "page"
@@ -7717,7 +7702,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/ratings/user/{id}:
+  /api/v1/ratings/user/{userId}:
     get:
       parameters:
       - name: "adv_id"
@@ -8035,7 +8020,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/searches/users/{id}:
+  /api/v1/searches/users/{userId}:
     get:
       parameters:
       - name: "adv_id"
@@ -8371,7 +8356,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/shops/user/tariffs/{id}/preview:
+  /api/v1/shops/user/tariffs/{userTariffId}/preview:
     get:
       parameters:
       - name: "adv_id"
@@ -8419,7 +8404,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/shops/user/tariffs/{id}:
+  /api/v1/shops/user/tariffs/{userTariffId}:
     get:
       parameters:
       - name: "adv_id"
@@ -8473,7 +8458,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/shops/user/tariffs/{id}/pay:
+  /api/v1/shops/user/tariffs/{userTariffId}/pay:
     get:
       parameters:
       - name: "skin"
@@ -12379,7 +12364,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/stories/group/{id}:
+  /api/v1/stories/group/{groupId}:
     get:
       parameters:
       - name: "adv_id"
@@ -12475,7 +12460,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/stories/user/{id}/preview:
+  /api/v1/stories/user/{userId}/preview:
     get:
       parameters:
       - name: "adv_id"
@@ -12895,6 +12880,8 @@ paths:
       - name: ""
         in: "query"
         required: false
+        schema:
+          type: string
       - name: "app_id"
         in: "query"
         required: false
@@ -13486,7 +13473,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/user/{id}/seller_profile/{id}:
+  /api/v1/user/{userId}/seller_profile/{id}:
     get:
       parameters:
       - name: "adv_id"
@@ -13537,7 +13524,7 @@ paths:
         x-example: "{id}"
         schema:
           type: string
-      - name: "id"
+      - name: "userId"
         in: "path"
         required: true
         x-example: "123"
@@ -13552,7 +13539,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/user/{id}/social_accounts/vk:
+  /api/v1/user/{user_id}/social_accounts/vk:
     get:
       parameters:
       - name: "adv_id"
@@ -13894,7 +13881,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/users/{id}/cards:
+  /api/v1/users/{userId}/cards:
     get:
       parameters:
       - name: "adv_id"
@@ -13948,7 +13935,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/users/{id}/contact_info:
+  /api/v1/users/{userId}/contact_info:
     get:
       parameters:
       - name: "adv_id"
@@ -14236,7 +14223,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/users/{id}/contacts:
+  /api/v1/users/{userId}/contacts:
     get:
       parameters:
       - name: "uid"
@@ -14626,6 +14613,8 @@ paths:
       - name: ""
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15235,7 +15224,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/geo/city/{id}/{id}:
+  /api/vkminiapp/v1/geo/city/{latitude}/{longitude}:
     get:
       parameters:
       - name: "app_id"
@@ -15463,7 +15452,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/product/{id}/vk_groups:
+  /api/vkminiapp/v1/product/{product_id}/vk_groups:
     get:
       parameters:
       - name: "app_id"
@@ -15493,7 +15482,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/products/{id}/publish/list:
+  /api/vkminiapp/v1/products/{productId}/publish/list:
     get:
       parameters:
       - name: "app_id"
@@ -15523,7 +15512,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/services-request/responses/product/{id}:
+  /api/vkminiapp/v1/services-request/responses/product/{productId}:
     get:
       parameters:
       - name: "app_id"
@@ -15595,7 +15584,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /b2b/v1/product/{id}/check_owner/{id}:
+  /b2b/v1/product/{productId}/check_owner/{ownerId}:
     get:
       parameters:
       - name: "productId"
@@ -15625,7 +15614,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /b2b/v1/shops/user/{id}/tariffs/list:
+  /b2b/v1/shops/user/{userId}/tariffs/list:
     get:
       parameters:
       - name: "limit"
@@ -15649,7 +15638,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /b2b/v1/shops/user/tariffs/{id}:
+  /b2b/v1/shops/user/tariffs/{userTariffId}:
     get:
       parameters:
       - name: "userTariffId"
@@ -15661,7 +15650,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /b2b/v1/user/{id}:
+  /b2b/v1/user/{userId}:
     get:
       parameters:
       - name: "userId"
@@ -15673,7 +15662,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /b2b/v1/user/{id}/contacts:
+  /b2b/v1/user/{userId}/contacts:
     get:
       parameters:
       - name: "is_deleted"
@@ -15715,7 +15704,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /crossposting/v1/vk/{id}:
+  /crossposting/v1/vk/{product_id}:
     get:
       parameters:
       - name: "adv_id"
@@ -15823,6 +15812,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15832,6 +15823,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15841,6 +15834,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15850,6 +15845,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15859,6 +15856,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15868,6 +15867,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15877,6 +15878,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15886,6 +15889,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15895,15 +15900,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
-      responses:
-        "200":
-           description: succefull
-  /img/buyers/img-sell@2x.png:
-    get:
-      parameters:
-      - name: "1620825195"
-        in: "query"
-        required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15913,6 +15911,8 @@ paths:
       - name: ""
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15922,6 +15922,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15931,6 +15933,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15940,6 +15944,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -15949,6 +15955,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16006,6 +16014,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16015,6 +16025,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16024,15 +16036,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
-      responses:
-        "200":
-           description: succefull
-  /img/sellers/ico-card@2x.png:
-    get:
-      parameters:
-      - name: "1620825195"
-        in: "query"
-        required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16042,6 +16047,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16051,15 +16058,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
-      responses:
-        "200":
-           description: succefull
-  /img/sellers/ico-phone.png:
-    get:
-      parameters:
-      - name: "1620825195"
-        in: "query"
-        required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16069,6 +16069,8 @@ paths:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16084,18 +16086,14 @@ paths:
       responses:
         "200":
            description: succefull
-  /img/webview/ruble.svg:
-    get:
-      parameters: []
-      responses:
-        "200":
-           description: succefull
   /img/youla.png:
     get:
       parameters:
       - name: "1620825195"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16771,6 +16769,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16780,6 +16780,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16789,6 +16791,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16804,36 +16808,14 @@ paths:
       responses:
         "200":
            description: succefull
-  /webview/css/fonts/roboto.css:
-    get:
-      parameters: []
-      responses:
-        "200":
-           description: succefull
-  /webview/css/main.css:
-    get:
-      parameters:
-      - name: "1620824949"
-        in: "query"
-        required: false
-      responses:
-        "200":
-           description: succefull
-  /webview/css/payment/loading.css:
-    get:
-      parameters:
-      - name: "1620824949"
-        in: "query"
-        required: false
-      responses:
-        "200":
-           description: succefull
   /webview/css/share_promocode.css:
     get:
       parameters:
       - name: "1620824956"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16885,24 +16867,9 @@ paths:
       responses:
         "200":
            description: succefull
-  /webview/fonts/Roboto-400.woff:
-    get:
-      parameters: []
-      responses:
-        "200":
-           description: succefull
   /webview/fonts/Roboto-500.woff:
     get:
       parameters: []
-      responses:
-        "200":
-           description: succefull
-  /webview/img/coins.svg:
-    get:
-      parameters:
-      - name: "1620824949"
-        in: "query"
-        required: false
       responses:
         "200":
            description: succefull
@@ -16912,6 +16879,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16921,6 +16890,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16930,6 +16901,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16957,6 +16930,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16966,6 +16941,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16975,6 +16952,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -16984,15 +16963,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
-      responses:
-        "200":
-           description: succefull
-  /webview/img/twitter.png:
-    get:
-      parameters:
-      - name: "1620824949"
-        in: "query"
-        required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -17002,6 +16974,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -17011,6 +16985,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -17020,6 +16996,8 @@ paths:
       - name: "1620824949"
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -18115,7 +18093,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chat/{id}/reset:
+  /api/v1/chat/{chatId}/reset:
     get:
       parameters:
       - name: "adv_id"
@@ -18169,7 +18147,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/chats/product/{id}/messages:
+  /api/v1/chats/product/{productId}/messages:
     get:
       parameters:
       - name: "app_id"
@@ -21415,6 +21393,8 @@ paths:
       - name: ""
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -21466,6 +21446,8 @@ paths:
       - name: ""
         in: "query"
         required: false
+        schema:
+          type: string
       responses:
         "200":
            description: succefull
@@ -21637,7 +21619,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/internal/stores/{id}/pages/added:
+  /api/v1/internal/stores/{storeId}/pages/added:
     get:
       parameters:
       - name: "storeId"
@@ -21649,7 +21631,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/internal/stores/{id}/blocks/added:
+  /api/v1/internal/stores/{storeId}/blocks/added:
     get:
       parameters:
       - name: "storeId"
@@ -21661,7 +21643,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/internal/stores/{id}/info/added:
+  /api/v1/internal/stores/{storeId}/info/added:
     get:
       parameters:
       - name: "storeId"
@@ -22267,7 +22249,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/products/{id}/sell:
+  /api/v1/products/{productId}/sell:
     get:
       parameters:
       - name: "adv_id"
@@ -23359,7 +23341,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/services-request/{id}/create-response:
+  /api/v1/services-request/{productId}/create-response:
     get:
       parameters:
       - name: "adv_id"
@@ -23413,7 +23395,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/services-request/{id}/respond:
+  /api/v1/services-request/{productId}/respond:
     get:
       parameters:
       - name: "adv_id"
@@ -23509,7 +23491,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/shops/user/tariffs/{id}/pay_wallet:
+  /api/v1/shops/user/tariffs/{userTariffId}/pay_wallet:
     get:
       parameters:
       - name: "app_id"
@@ -23905,7 +23887,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/chats/product/{id}/messages:
+  /api/vkminiapp/v1/chats/product/{productId}/messages:
     get:
       parameters:
       - name: "app_id"
@@ -23965,7 +23947,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/products/{id}/sell:
+  /api/vkminiapp/v1/products/{productId}/sell:
     get:
       parameters:
       - name: "app_id"
@@ -23995,7 +23977,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/products/{id}/archivate:
+  /api/vkminiapp/v1/products/{productId}/archivate:
     get:
       parameters:
       - name: "app_id"
@@ -24337,7 +24319,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/counters/subscriptions/{id}/view:
+  /api/v1/counters/subscriptions/{userId}/view:
     get:
       parameters:
       - name: "adv_id"
@@ -24541,7 +24523,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/products/limits/{id}/paid:
+  /api/v1/products/limits/{productLimitId}/paid:
     get:
       parameters:
       - name: "app_id"
@@ -24571,7 +24553,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/searches/{id}/view:
+  /api/v1/searches/{searchId}/view:
     get:
       parameters:
       - name: "adv_id"
@@ -24625,7 +24607,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/searches/{id}/notification_type:
+  /api/v1/searches/{searchId}/notification_type:
     get:
       parameters:
       - name: "adv_id"
@@ -24679,7 +24661,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/shops/user/tariffs/{id}/cancel:
+  /api/v1/shops/user/tariffs/{userTariffId}/cancel:
     get:
       parameters:
       - name: "adv_id"
@@ -24733,7 +24715,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/shops/user/tariffs/{id}/prolong:
+  /api/v1/shops/user/tariffs/{userTariffId}/prolong:
     get:
       parameters:
       - name: "adv_id"
@@ -24787,7 +24769,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/shops/user/tariffs/{id}/feature/add:
+  /api/v1/shops/user/tariffs/{userTariffId}/feature/add:
     get:
       parameters:
       - name: "adv_id"
@@ -24835,7 +24817,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/stories/{id}/view:
+  /api/v1/stories/{storyId}/view:
     get:
       parameters:
       - name: "adv_id"
@@ -24889,7 +24871,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/v1/stories/{id}/publish:
+  /api/v1/stories/{storyId}/publish:
     get:
       parameters:
       - name: "adv_id"
@@ -24985,7 +24967,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /api/vkminiapp/v1/product/{id}:
+  /api/vkminiapp/v1/product/{productId}:
     get:
       parameters:
       - name: "app_id"
@@ -25039,7 +25021,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /b2b/v1/product/{id}/renewal:
+  /b2b/v1/product/{productId}/renewal:
     get:
       parameters:
       - name: "productId"
@@ -25051,7 +25033,7 @@ paths:
       responses:
         "200":
            description: succefull
-  /b2b/v1/product/{id}:
+  /b2b/v1/product/{productId}:
     get:
       parameters:
       - name: "provider_id"
